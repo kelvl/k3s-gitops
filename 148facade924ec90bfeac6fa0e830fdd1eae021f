@@ -1,0 +1,1 @@
+{"jobID":"9aa99b06-11f8-9519-884d-42d015482a5c","spec":{"type":"policy","cause":{"Message":"","User":"Kelvin Law \u003ccalvin18@gmail.com\u003e"},"spec":{"demo:deployment/podinfo":{"add":{"tag_all":"glob:3.2.*"},"remove":{}}}},"result":null}
