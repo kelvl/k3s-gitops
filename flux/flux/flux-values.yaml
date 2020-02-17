@@ -3,19 +3,24 @@ git:
 registry:
   rps: 1
   burst: 1
+image:
+  repository: onedr0p/flux
+  tag: v1.17.1 
+  # 1.10
+  pullPolicy: Always
 # memcached:
 #   tolerations:
 #   - key: "arm"
 #     operator: "Exists"
 # additionalArgs:
 # - --connect=ws://fluxcloud
-prometheus:
-  enabled: true
-  serviceMonitor:
-    create: false
-    interval: 30s
-    scrapeTimeout: 10s
-    namespace: flux
+# prometheus:
+#   enabled: true
+#   serviceMonitor:
+#     create: false
+#     interval: 30s
+#     scrapeTimeout: 10s
+#     namespace: flux
 syncGarbageCollection:
   enabled: true
   dry: false

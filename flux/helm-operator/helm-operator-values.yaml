@@ -1,4 +1,9 @@
 createCRD: true
+image:
+  repository: onedr0p/helm-operator
+  tag: v1.0.0-rc8
+  # 0.6.0
+  pullPolicy: Always
 git:
   ssh:
     secretName: flux-git-deploy
@@ -6,10 +11,10 @@ chartsSyncInterval: "5m"
 statusUpdateInterval: "5m"
 helm: 
   versions: v3
-prometheus:
-  enabled: true
-  serviceMonitor:
-    create: false
-    interval: 30s
-    scrapeTimeout: 10s
-    namespace: flux
+# prometheus:
+#   enabled: true
+#   serviceMonitor:
+#     create: false
+#     interval: 30s
+#     scrapeTimeout: 10s
+#     namespace: flux
