@@ -1,0 +1,29 @@
+# ---
+# apiVersion: apps/v1
+# kind: Deployment
+# metadata:
+#   name: oauth2-proxy
+# spec:
+#   selector:
+#     matchLabels:
+#       app: oauth2-proxy
+#   replicas: 1
+#   template:
+#     metadata:
+#       labels:
+#         app: oauth2-proxy
+#     spec:
+#       containers:
+#       - name: my-nginx
+#         image: nginx
+#         ports:  
+#         - containerPort: 80
+# ---
+# apiVersion: traefik.containo.us/v1alpha1
+# kind: Middleware
+# metadata:
+#   name: oauth2-forward-auth
+# spec:
+#   forwardAuth:
+#     address: https://example.com/auth
+#     trustForwardHeader: true

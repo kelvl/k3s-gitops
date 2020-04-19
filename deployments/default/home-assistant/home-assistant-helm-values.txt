@@ -1,0 +1,4 @@
+ingress:
+  hosts:
+    - ha.${DOMAIN}
+    

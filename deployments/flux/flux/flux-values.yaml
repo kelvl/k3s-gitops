@@ -1,19 +1,21 @@
 git:
   url: "git@github.com:kelvl/k3s-gitops"
+  branch: master
+  path: deployments
 registry:
   rps: 1
   burst: 1
-image:
-  repository: onedr0p/flux
-  tag: v1.17.1 
-  # 1.10
-  pullPolicy: Always
+nodeSelector:
+  kubernetes.io/hostname: nas-master
+memcached:
+  nodeSelector:
+    kubernetes.io/hostname: nas-master
 # memcached:
 #   tolerations:
 #   - key: "arm"
 #     operator: "Exists"
-# additionalArgs:
-# - --connect=ws://fluxcloud
+additionalArgs:
+  - --connect=ws://fluxcloud
 # prometheus:
 #   enabled: true
 #   serviceMonitor:

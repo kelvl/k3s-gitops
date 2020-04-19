@@ -1,9 +1,11 @@
-createCRD: true
-image:
-  repository: onedr0p/helm-operator
-  tag: v1.0.0-rc8
-  # 0.6.0
-  pullPolicy: Always
+# createCRD: true
+# image:
+#   repository: onedr0p/helm-operator
+#   tag: v1.0.0-rc8
+#   # 0.6.0
+#   pullPolicy: Always
+nodeSelector:
+  kubernetes.io/hostname: nas-master
 git:
   ssh:
     secretName: flux-git-deploy

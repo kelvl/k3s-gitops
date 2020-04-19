@@ -1,0 +1,48 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: traefik
+  namespace: default
+  annotations:
+    fluxcd.io/ignore: "false"
+    fluxcd.io/automated: "true"
+    # fluxcd.io/tag.chart-image: semver:~0.
+    # filter.fluxcd.io/vscode: "regex:^2.[0-9]+-.*$"
+spec:
+  releaseName: traefik
+  rollback:
+    enable: true
+  chart:
+    repository: https://containous.github.io/traefik-helm-chart
+    name: traefik
+    version: 8.0.3
+  values:
+    image:
+      name: traefik
+      tag: 2.2.0
+    nodeSelector: 
+      kubernetes.io/hostname: nas-master
+    globalArguments: []
+    additionalArguments:
+      # - "--log.level=DEBUG"
+      # - "--accesslog"
+      - "--providers.kubernetesingress"
+      - "--certificatesResolvers.default.acme.tlsChallenge=true"
+      - "--certificatesresolvers.default.acme.storage=/data/acme.json"
+    service: 
+      enabled: true
+      type: NodePort
+    ports:
+      traefik:
+        port: 19000
+        expose: true
+        nodePort: 30081
+      # web: 
+      #   port: 18000
+      #   expose: true
+      #   nodePort: 30080
+      websecure:
+        port: 18443
+        expose: true
+        nodePort: 30443
