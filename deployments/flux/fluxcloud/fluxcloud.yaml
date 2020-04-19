@@ -50,7 +50,7 @@ spec:
         - name: SLACK_ICON_EMOJI
           value: ":heart:"
         - name: GITHUB_URL
-          value: "https://github.com/kelvl/k8s-gitops/"
+          value: "https://github.com/kelvl/k3s-gitops/"
         - name: LISTEN_ADDRESS
           value: ":3032"
       nodeSelector: 
