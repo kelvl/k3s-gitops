@@ -1,0 +1,38 @@
+# ---
+# apiVersion: traefik.containo.us/v1alpha1
+# kind: Middleware
+# metadata:
+#   name: oauth2-forward-auth
+#   namespace: default
+# spec:
+#   forwardAuth:
+#     address: http://traefik-forward-auth:4181
+#     trustForwardHeader: true
+#     authResponseHeaders: 
+#       - X-Forwarded-User
+#       - X-Auth-Request-User
+#       - X-Auth-Request-Email
+#       - Set-Cookie
+# ---
+# apiVersion: traefik.containo.us/v1alpha1
+# kind: Middleware
+# metadata:
+#   name: oauth2-signin
+#   namespace: default
+# spec:
+#   errors:
+#     service: 
+#       name: oauth2-proxy
+#       port: 80
+#     status: 
+#       - 401
+#     query: /oauth2/sign_in
+# ---
+# apiVersion: traefik.containo.us/v1alpha1
+# kind: Middleware
+# metadata:
+#   name: default-https
+# spec:
+#   redirectScheme:
+#     scheme: https
+#     permanent: true

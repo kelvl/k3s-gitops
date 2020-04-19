@@ -38,14 +38,14 @@ spec:
         port: 19000
         expose: true
         nodePort: 30081
-      web: 
-        port: 18000
-        expose: true
-        nodePort: 30080
+      # web: 
+      #   port: 18000
+      #   expose: true
+      #   nodePort: 30080
       websecure:
         port: 18443
         expose: true
         nodePort: 30443
     persistence:
       enabled: true
-      storageClass: local-storage  
+      storageClass: local-path

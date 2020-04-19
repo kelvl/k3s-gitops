@@ -10,7 +10,7 @@ authenticatedEmailsFile:
 extraArgs:
     provider: google
     cookie-domain: .$DOMAIN
-    skip-provider-button:
+    # skip-provider-button:
     pass-authorization-header:
     reverse-proxy: true
     set-authorization-header: true
@@ -19,4 +19,5 @@ extraArgs:
     pass-basic-auth: false
     pass-user-headers: true
     email-domain: "*"
+    silence-ping-logging: true
     
