@@ -52,6 +52,7 @@ kseal() {
 #
 
 kseal "${REPO_ROOT}/deployments/default/home-assistant/home-assistant-helm-values.txt"
+kseal "${REPO_ROOT}/deployments/default/oauth2-proxy/oauth2-proxy-helm-values.txt"
 # kseal "${REPO_ROOT}/deployments/default/sonarr/sonarr-helm-values.txt"
 # kseal "${REPO_ROOT}/deployments/default/nzbget/nzbget-helm-values.txt"
 
@@ -62,7 +63,7 @@ kseal "${REPO_ROOT}/deployments/default/home-assistant/home-assistant-helm-value
 # Flux Cloud - default Namespace
 kubectl create secret generic fluxcloud \
   --from-literal=slack_url="$SLACK_URL" \
-  --namespace flux --dry-run -o json \
+  --namespace flux --dry-run=client -o json \
   | \
 kubeseal --format=yaml --cert="$PUB_CERT" \
     > "$REPO_ROOT"/deployments/flux/fluxcloud/fluxcloud-secrets.yaml
