@@ -1,5 +1,5 @@
 config:
-  authHost: auth.$DOMAIN
+  authHost: oauth2.$DOMAIN
   cookieDomain: 
     - $DOMAIN
   secret: $OAUTH_COOKIE_SECRET
@@ -12,6 +12,6 @@ config:
 ingress:
   enabled: true
   hosts:
-    - host: auth.$DOMAIN
+    - host: oauth2.$DOMAIN
       paths: 
         - /
