@@ -1,0 +1,17 @@
+config:
+  authHost: auth.$DOMAIN
+  cookieDomain: 
+    - $DOMAIN
+  secret: $OAUTH_COOKIE_SECRET
+  whitelist:
+    - $OAUTH_ALLOWED_EMAIL
+  providers:
+    google:
+      clientID: $OAUTH_CLIENT_ID
+      clientSecret: $OAUTH_CLIENT_SECRET
+ingress:
+  enabled: true
+  hosts:
+    - host: auth.$DOMAIN
+      paths: 
+        - /
