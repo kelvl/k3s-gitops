@@ -45,7 +45,7 @@ spec:
     # podAnnotations:
     #   backup.velero.io/backup-volumes: config
     hostMounts:
-      - name: simulatePrivilegedForBlueD
+      - name: simulate-for-bluetooth
         mountPath: /tmp/null
         hostPath: /dev/null
     vscode:
