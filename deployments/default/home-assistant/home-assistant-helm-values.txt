@@ -3,7 +3,6 @@ ingress:
     - hass.${DOMAIN}
 
 vscode:
-  password: '24906472'
   ingress: 
     hosts: ['hass-vscode.${DOMAIN}']
 
