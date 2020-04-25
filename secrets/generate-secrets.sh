@@ -52,7 +52,7 @@ kseal() {
 #
 
 kseal "${REPO_ROOT}/deployments/default/home-assistant/home-assistant-helm-values.txt"
-kseal "${REPO_ROOT}/deployments/default/oauth2-proxy/oauth2-proxy-helm-values.txt"
+kseal "${REPO_ROOT}/deployments/default/traefik-forward-auth/traefik-forward-auth-helm-values.txt"
 # kseal "${REPO_ROOT}/deployments/default/sonarr/sonarr-helm-values.txt"
 # kseal "${REPO_ROOT}/deployments/default/nzbget/nzbget-helm-values.txt"
 
