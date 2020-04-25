@@ -47,14 +47,14 @@ spec:
     vscode:
       enabled: true
       ingress:
-        enabled: false
+        enabled: true
         annotations:
           kubernetes.io/ingress.class: "traefik"
           ingress.kubernetes.io/ssl-redirect: "true"
           traefik.ingress.kubernetes.io/router.tls: "true"
           traefik.ingress.kubernetes.io/router.tls.certresolver: "default"
           traefik.ingress.kubernetes.io/router.entrypoints: websecure
-          traefik.ingress.kubernetes.io/router.middlewares: default-oauth2-forward-auth@kubernetescrd
+          traefik.ingress.kubernetes.io/router.middlewares: default-traefik-forward-auth@kubernetescrd
     resources:
       limits:
         memory: 2500Mi
