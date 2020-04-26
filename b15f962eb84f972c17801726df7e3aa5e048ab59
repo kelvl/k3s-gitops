@@ -1,0 +1,1 @@
+{"jobID":"7fda6318-14b1-a4c7-e5f9-f9363f539503","spec":{"type":"policy","cause":{"Message":"","User":"Kelvin Law \u003ccalvin18@gmail.com\u003e"},"spec":{"default:helmrelease/home-assistant":{"add":{"tag.vscode":"semver:~3"},"remove":{}}}},"result":null}
