@@ -1,0 +1,49 @@
+env:
+  - name: LOCAL_NETWORK
+    value: 10.0.0.0/8
+  - name: WEBPROXY_ENABLED
+    value: "true"
+  - name: TRANSMISSION_RATIO_LIMIT
+    value: "0"
+  - name: TRANSMISSION_RATIO_LIMIT_ENABLED
+    value: "true"
+  - name: TRANSMISSION_WATCH_DIR_ENABLED
+    value: "true"
+  - name: TRANSMISSION_WATCH_DIR
+    value: /downloads/watch
+  - name: TRANSMISSION_DOWNLOAD_QUEUE_ENABLED
+    value: "true"
+  - name: TRANSMISSION_QUEUE_STALLED_ENABLED
+    value: "true"
+  - name: TRANSMISSION_DOWNLOAD_DIR
+    value: /downloads/completed
+  - name: TRANSMISSION_TRASH_ORIGINAL_TORRENT_FILES
+    value: "true"
+  - name: TRANSMISSION_INCOMPLETE_DIR
+    value: /downloads/incomplete
+  - name: TRANSMISSION_INCOMPLETE_DIR_ENABLED
+    value: "true"
+  - name: ENABLE_UFW
+    value: "true"
+  - name: CREATE_TUN_DEVICE
+    value: "true"
+  - name: OPENVPN_OPTS
+    value: --inactive 3600 --ping 10 --ping-exit 60 --mute-replay-warnings
+  - name: TRANSMISSION_WEB_UI
+    value: combustion
+  - name: PUID
+    value: "1000"
+  - name: PGID
+    value: "1000"
+  - name: OPENVPN_PROVIDER
+    value: $VPN_PROVIDER
+  - name: OPENVPN_CONFIG
+    value: $VPN_CONFIG
+  - name: OPENVPN_USERNAME
+    value: $VPN_USERNAME
+  - name: OPENVPN_PASSWORD
+    value: $VPN_PASSWORD
+
+ingress:
+    hosts:
+    - tm.$DOMAIN
