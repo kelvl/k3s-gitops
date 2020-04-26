@@ -21,17 +21,17 @@ spec:
   values:
     image:
       name: traefik
-      tag: 2.2.0
-    nodeSelector: 
+      tag: v2.2.0
+    nodeSelector:
       kubernetes.io/hostname: nas-master
     globalArguments: []
     additionalArguments:
       # - "--log.level=DEBUG"
       # - "--accesslog"
-      - "--providers.kubernetesingress"
-      - "--certificatesResolvers.default.acme.tlsChallenge=true"
-      - "--certificatesresolvers.default.acme.storage=/data/acme.json"
-    service: 
+    - "--providers.kubernetesingress"
+    - "--certificatesResolvers.default.acme.tlsChallenge=true"
+    - "--certificatesresolvers.default.acme.storage=/data/acme.json"
+    service:
       enabled: true
       type: NodePort
     ports:
