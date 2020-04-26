@@ -1,0 +1,3 @@
+ingress:
+  hosts:
+    - jackett.$DOMAIN

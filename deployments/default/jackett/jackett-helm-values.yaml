@@ -1,0 +1,16 @@
+apiVersion: bitnami.com/v1alpha1
+kind: SealedSecret
+metadata:
+  creationTimestamp: null
+  name: jackett-helm-values
+  namespace: default
+spec:
+  encryptedData:
+    values.yaml: AgAwkDklqSMeL/aOJCPRMSBXSVpRAroP4L2HQVTTth7z2TgauGP2K49RkWxAvu9RJMXNjgrT9MDxwkiTYDGwyvitMd6NZJNNge9rzVagKQMc4hHrwbLP0mzFtm4drTiQTRBuqTw0NSIX2K8dZ34wTk34EJRa9uXKmzhdu1i3NKvXs9PFUt43beEfgblRYmqJw3rhUNGp9veUymzUJOi4189ImxXdA4uzDsJKjkYhM1lu4RYudPvzmYJEayRLh4Q9BiJmPJmlc4HOsRNS9+Wyf1np2JVSvo17LhYgXCq6S8RG5VSflTuKQkd/70WNK99KCTecjdhdUYuARCewKehtYjdhDT4sIJTtgBs6eGMg4BxGepbr98jGxVQ5fDnGp7dIcZqK2g2SLyVLs9x1rUZsxnkd0iffGwHgeHecDkawBrjU+/Vz0DG2skuoeU3NAq+OQBkoRqFbNxcLlW+vG1rIM1TAXdnUzrAkLAqrJ+E4F6HG87Nka1YT4cYRs8u76PgLshG3j/zsGBEJfAtvESz6SR9EGo+EMqJRm0Sb6/6+VNN2cjFGMnTw8nNv43RFzWJP0vNAyr17ngcq61CoYkEpljU+/E6IDkoqtvH3lheaVuODdm0fYiBCCZYOFhDWp4zKS07ch5BSqvHY2VRnPMOztwWj9booiOk9aPRQxNiOf2UjG/cgUcZ45iWdNOvOzu83Iecg6gEYzYnXYkMfiTcYv5FE60MPIx6uF398a/XPu0996ze0GUzU5W5uKqpnhQ==
+  template:
+    metadata:
+      creationTimestamp: null
+      name: jackett-helm-values
+      namespace: default
+status: {}
+
