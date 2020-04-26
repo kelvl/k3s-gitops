@@ -1,0 +1,57 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: sonarr
+  namespace: default
+  annotations:
+    fluxcd.io/ignore: "false"
+    fluxcd.io/automated: "true"
+    # fluxcd.io/tag.chart-image: semver:~8.
+spec:
+  releaseName: sonarr
+  rollback:
+    enable: false
+  chart:
+    repository: https://billimek.com/billimek-charts/
+    name: sonarr
+    version: 3.2.0
+  values:
+    nodeSelector: 
+      kubernetes.io/hostname: nas-master
+    probes:
+      startup:
+        initialDelaySeconds: 120
+      liveness:
+        periodSeconds: 60
+      rediness:
+        periodSeconds: 60
+    image:
+      name: linuxserver/sonarr
+      tag: 3.0.3.771-ls10
+    puid: 1000
+    pgid: 1000
+    timezone: "Etc/GMT-8"
+    persistence:
+      config:
+        enabled: true
+        existingClaim: sonarr
+      downloads:
+        enabled: true
+        existingClaim: downloads
+        subPath: completed
+      tv:
+        enabled: true
+        existingClaim: media
+        subPath: TV
+    ingress:
+      enabled: true
+      annotations:
+        kubernetes.io/ingress.class: "traefik"
+        traefik.ingress.kubernetes.io/router.tls: "true"
+        traefik.ingress.kubernetes.io/router.tls.certresolver: "default"
+        traefik.ingress.kubernetes.io/router.entrypoints: websecure
+        traefik.ingress.kubernetes.io/router.middlewares: default-traefik-forward-auth@kubernetescrd
+      path: /
+  valueFileSecrets:
+    - name: "sonarr-helm-values"
