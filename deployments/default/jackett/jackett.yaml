@@ -9,7 +9,7 @@ metadata:
     fluxcd.io/automated: "true"
     repository.fluxcd.io/app: image.name
     tag.fluxcd.io/app: image.tag
-    filter.fluxcd.io/app: 'glob:v0.*'
+    filter.fluxcd.io/app: 'semver:~0'
 spec:
   releaseName: jackett
   rollback:
