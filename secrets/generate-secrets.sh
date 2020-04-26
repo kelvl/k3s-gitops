@@ -53,8 +53,10 @@ kseal() {
 
 kseal "${REPO_ROOT}/deployments/default/home-assistant/home-assistant-helm-values.txt"
 kseal "${REPO_ROOT}/deployments/default/traefik-forward-auth/traefik-forward-auth-helm-values.txt"
-# kseal "${REPO_ROOT}/deployments/default/sonarr/sonarr-helm-values.txt"
-# kseal "${REPO_ROOT}/deployments/default/nzbget/nzbget-helm-values.txt"
+kseal "${REPO_ROOT}/deployments/default/transmission/transmission-helm-values.txt"
+kseal "${REPO_ROOT}/deployments/default/jackett/jackett-helm-values.txt"
+kseal "${REPO_ROOT}/deployments/default/radarr/radarr-helm-values.txt"
+kseal "${REPO_ROOT}/deployments/default/sonarr/sonarr-helm-values.txt"
 
 #
 # Generic Secrets
