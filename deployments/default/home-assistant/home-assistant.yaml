@@ -8,7 +8,7 @@ metadata:
     fluxcd.io/ignore: "false"
     fluxcd.io/automated: "true"
     filter.fluxcd.io/chart-image: semver:~0.
-    filter.fluxcd.io/vscode: semver:~3.
+    filter.fluxcd.io/vscode: semver:~3
 spec:
   releaseName: home-assistant
   rollback:
