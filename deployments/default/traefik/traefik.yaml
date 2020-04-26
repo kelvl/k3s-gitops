@@ -48,4 +48,6 @@ spec:
         nodePort: 30443
     persistence:
       enabled: true
-      storageClass: local-path
+      storageClass: local-storage
+      accessMode: ReadWriteOnce
+      size: 1Gi
