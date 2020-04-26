@@ -7,9 +7,7 @@ metadata:
   annotations:
     fluxcd.io/ignore: "false"
     fluxcd.io/automated: "true"
-    repository.fluxcd.io/app: image.name
-    tag.fluxcd.io/app: image.tag
-    filter.fluxcd.io/app: semver:~2
+    filter.fluxcd.io/chart-image: semver:~2
 spec:
   releaseName: transmission
   rollback:
@@ -22,7 +20,7 @@ spec:
     nodeSelector: 
       kubernetes.io/hostname: nas-master
     image:
-      name: haugene/transmission-openvpn
+      repository: haugene/transmission-openvpn
       tag: 2.12
     service:
       type: ClusterIP
