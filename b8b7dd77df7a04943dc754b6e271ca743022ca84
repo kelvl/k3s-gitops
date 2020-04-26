@@ -1,0 +1,1 @@
+{"jobID":"c2a95c73-a5c4-c955-f7af-c8098d42a721","spec":{"type":"policy","cause":{"Message":"","User":"Kelvin Law \u003ccalvin18@gmail.com\u003e"},"spec":{"default:helmrelease/home-assistant":{"add":{"tag.chart-image":"semver:~0","tag.vscode":"semver:~3"},"remove":{}}}},"result":null}
