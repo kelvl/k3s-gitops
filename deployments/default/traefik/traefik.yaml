@@ -12,7 +12,7 @@ metadata:
 spec:
   releaseName: traefik
   rollback:
-    enable: true
+    enable: false
   chart:
     repository: https://containous.github.io/traefik-helm-chart
     name: traefik
