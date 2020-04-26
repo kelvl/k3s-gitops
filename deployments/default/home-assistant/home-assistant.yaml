@@ -8,16 +8,13 @@ metadata:
     fluxcd.io/ignore: "false"
     fluxcd.io/automated: "true"
     filter.fluxcd.io/chart-image: semver:~0
-    repository.fluxcd.io/app: image.repository
-    tag.fluxcd.io/app: image.tag
-    filter.fluxcd.io/app: semver:~0
     repository.fluxcd.io/vscode: vscode.repository
     tag.fluxcd.io/vscode: vscode.tag
     filter.fluxcd.io/vscode: semver:~3
 spec:
   releaseName: home-assistant
   rollback:
-    enable: true
+    enable: false
   chart:
     repository: https://kubernetes-charts.storage.googleapis.com/
     name: home-assistant
