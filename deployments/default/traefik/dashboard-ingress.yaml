@@ -1,0 +1,31 @@
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: traefik-dashboard-prefix
+  namespace: default
+spec:
+  redirectRegex:
+    regex: '^(https?://[^/]+)/?$'
+    replacement: '${1}/dashboard/'
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: traefik
+    traefik.ingress.kubernetes.io/router.entrypoints: websecure
+    traefik.ingress.kubernetes.io/router.middlewares: default-traefik-forward-auth@kubernetescrd,default-traefik-dashboard-prefix@kubernetescrd
+    traefik.ingress.kubernetes.io/router.tls: "true"
+    traefik.ingress.kubernetes.io/router.tls.certresolver: default
+  name: traefik-dashboard
+  namespace: default
+spec:
+  rules:
+  - host: traefik.kelvinlaw.us
+    http:
+      paths:
+      - backend:
+          serviceName: traefik
+          servicePort: 9000
+        path: /
