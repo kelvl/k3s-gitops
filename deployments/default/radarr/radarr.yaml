@@ -1,0 +1,58 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: radarr
+  namespace: default
+  annotations:
+    fluxcd.io/ignore: "false"
+    fluxcd.io/automated: "true"
+    # fluxcd.io/tag.chart-image: semver:~8.
+spec:
+  releaseName: radarr
+  rollback:
+    enable: false
+  chart:
+    repository: https://billimek.com/billimek-charts/
+    name: radarr
+    version: 3.2.0
+  values:
+    nodeSelector: 
+      kubernetes.io/hostname: nas-master
+    probes:
+      startup:
+        initialDelaySeconds: 120
+      liveness:
+        periodSeconds: 60
+      rediness:
+        periodSeconds: 60
+    image:
+      name: linuxserver/radarr
+      tag: 3.0.0.2878-ls5
+    puid: 1000
+    pgid: 1000
+    timezone: "Etc/GMT-8"
+    persistence:
+      config:
+        enabled: true
+        existingClaim: radarr
+      downloads:
+        enabled: true
+        existingClaim: downloads
+        subPath: completed
+      movies:
+        enabled: true
+        existingClaim: media
+        subPath: Movies
+
+    ingress:
+      enabled: true
+      annotations:
+        kubernetes.io/ingress.class: "traefik"
+        traefik.ingress.kubernetes.io/router.tls: "true"
+        traefik.ingress.kubernetes.io/router.tls.certresolver: "default"
+        traefik.ingress.kubernetes.io/router.entrypoints: websecure
+        traefik.ingress.kubernetes.io/router.middlewares: default-traefik-forward-auth@kubernetescrd
+      path: /
+  valueFileSecrets:
+    - name: "radarr-helm-values"
