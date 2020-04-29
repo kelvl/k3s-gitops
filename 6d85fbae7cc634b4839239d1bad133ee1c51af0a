@@ -1,0 +1,1 @@
+{"jobID":"838ff857-6437-513c-f849-ee0d82cdcaae","spec":{"type":"policy","cause":{"Message":"","User":"Kelvin Law \u003ccalvin18@gmail.com\u003e"},"spec":{"default:helmrelease/home-assistant":{"add":{"automated":"true"},"remove":{}}}},"result":null}
