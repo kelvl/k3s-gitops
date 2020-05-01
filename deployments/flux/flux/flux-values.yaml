@@ -10,10 +10,6 @@ nodeSelector:
 memcached:
   nodeSelector:
     kubernetes.io/hostname: nas-master
-# memcached:
-#   tolerations:
-#   - key: "arm"
-#     operator: "Exists"
 additionalArgs:
   - --connect=ws://fluxcloud
 # prometheus:
