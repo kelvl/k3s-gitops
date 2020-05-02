@@ -1,4 +1,4 @@
-createCRD: true
+# createCRD: true
 nodeSelector:
   kubernetes.io/hostname: nas-master
 git:
