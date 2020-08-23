@@ -19,8 +19,8 @@ spec:
   values:
     image:
       repository: thomseddon/traefik-forward-auth
-      tag: v2.1.0
-    nodeSelector: 
+      tag: v2.2.0
+    nodeSelector:
       kubernetes.io/hostname: nas-master
     config:
       domain: ["*"]
@@ -30,7 +30,7 @@ spec:
           enabled: true
     ingress:
       enabled: true
-      annotations: 
+      annotations:
         kubernetes.io/ingress.class: traefik
         traefik.ingress.kubernetes.io/router.entrypoints: websecure
         traefik.ingress.kubernetes.io/router.tls: "true"
