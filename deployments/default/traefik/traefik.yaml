@@ -21,7 +21,7 @@ spec:
   values:
     image:
       name: traefik
-      tag: v2.3
+      tag: v2.2.8
     nodeSelector:
       kubernetes.io/hostname: nas-master
     globalArguments: []
