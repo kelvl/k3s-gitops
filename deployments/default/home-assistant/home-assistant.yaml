@@ -50,7 +50,7 @@ spec:
     vscode:
       image:
         repository: codercom/code-server
-        tag: 3.4.1
+        tag: 3.5.0
       enabled: true
       ingress:
         enabled: true
