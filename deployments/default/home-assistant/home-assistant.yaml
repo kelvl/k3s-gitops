@@ -11,6 +11,7 @@ metadata:
     tag.fluxcd.io/vscode: vscode.tag
     filter.fluxcd.io/vscode: semver:~3
     fluxcd.io/automated: 'true'
+    filter.fluxcd.io/app: semver:~0.114
 spec:
   releaseName: home-assistant
   rollback:
