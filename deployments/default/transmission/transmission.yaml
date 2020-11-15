@@ -17,11 +17,11 @@ spec:
     name: transmission-openvpn
     version: 0.1.0
   values:
-    nodeSelector: 
+    nodeSelector:
       kubernetes.io/hostname: nas-master
     image:
       repository: haugene/transmission-openvpn
-      tag: 3.1
+      tag: '3.1'
     service:
       type: ClusterIP
       port: 80
@@ -35,28 +35,28 @@ spec:
         traefik.ingress.kubernetes.io/router.middlewares: default-traefik-forward-auth@kubernetescrd
       path: /
     volumes:
-      - name: downloads
-        persistentVolumeClaim:
-          claimName: downloads
-      - name: transmission
-        persistentVolumeClaim:
-          claimName: transmission
+    - name: downloads
+      persistentVolumeClaim:
+        claimName: downloads
+    - name: transmission
+      persistentVolumeClaim:
+        claimName: transmission
     volumeMounts:
-        - name: transmission
-          mountPath: "/data"
-        - name: downloads
-          mountPath: "/downloads/completed"
-          subPath: "completed"
-        - name: downloads
-          mountPath: "/downloads/watch"
-          subPath: "watch"
-        - name: downloads
-          mountPath: "/downloads/incomplete"
-          subPath: "incomplete"
+    - name: transmission
+      mountPath: "/data"
+    - name: downloads
+      mountPath: "/downloads/completed"
+      subPath: "completed"
+    - name: downloads
+      mountPath: "/downloads/watch"
+      subPath: "watch"
+    - name: downloads
+      mountPath: "/downloads/incomplete"
+      subPath: "incomplete"
     # Security context for container
     securityContext:
       capabilities:
         add:
-          - NET_ADMIN
+        - NET_ADMIN
   valueFileSecrets:
-    - name: "transmission-helm-values"
+  - name: "transmission-helm-values"
