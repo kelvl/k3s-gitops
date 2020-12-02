@@ -37,6 +37,8 @@ env:
     value: "1000"
   - name: OPENVPN_PROVIDER
     value: $VPN_PROVIDER
+  - name: $VPN_PROVIDER_BUNDLE_CONFIG
+    value: $VPN_PROVIDER_BUNDLE
   - name: OPENVPN_CONFIG
     value: $VPN_CONFIG
   - name: OPENVPN_USERNAME
