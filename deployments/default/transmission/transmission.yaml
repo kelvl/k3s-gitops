@@ -21,7 +21,7 @@ spec:
       kubernetes.io/hostname: nas-master
     image:
       repository: haugene/transmission-openvpn
-      tag: '3.2'
+      tag: '3.3'
     service:
       type: ClusterIP
       port: 80
